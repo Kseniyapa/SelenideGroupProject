@@ -7,6 +7,9 @@ import org.openqa.selenium.support.How;
 import static com.codeborne.selenide.Condition.visible;
 
 public class CreateNewTestPage {
+    /**
+     * Локаторы для работы со страницей.
+     */
     @FindBy(how = How.XPATH, using = "[ng-tr=\"MTP.MTP\"]")
     private SelenideElement buttonCreateNewTest; //  Кнопка "Новый тест".
 
@@ -40,19 +43,29 @@ public class CreateNewTestPage {
     @FindBy(how = How.XPATH, using = "//*[css = \"[data-testid=\"Checkout start button\"]")
     private SelenideElement buttonRunFreeTest;// Кнопка "Запустиьть бесплатный тест".
 
-    public void createNewTest() {
+    /**
+     * Метод создания нового теста с параметрами:
+     * @param testName -Имя теста
+     * @param webSite -адрес сайта
+     * @param nameSegment -название сегмента
+     * @param voiceResponse - голосовой ответ
+     */
+    public void createNewTest(String testName, String webSite, String nameSegment, String voiceResponse) {
         buttonCreateNewTest();
-        fieldTestName.setValue("test");
-        fieldWebSite.setValue("test.com");
+        fieldTestName.setValue(testName);
+        fieldWebSite.setValue(webSite);
         buttonSelectAudience.shouldBe(visible).pressEnter();
-        fieldNameSegment.setValue("test segment");
+        fieldNameSegment.setValue(nameSegment);
         buttonToTasks.shouldBe(visible).pressEnter();
-        fieldVoiceResponse.setValue("some");
+        fieldVoiceResponse.setValue(voiceResponse);
         buttonAdded.shouldBe(visible).pressEnter();
         buttonCheckAndRun.shouldBe(visible).pressEnter();
         buttonRunFreeTest.shouldBe(visible).pressEnter();
     }
 
+    /**
+     * Метод нажимает кнопку для создания нового теста.
+     */
     private void buttonCreateNewTest() {
         buttonCreateNewTest.shouldBe(visible).click();
     }

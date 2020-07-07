@@ -12,6 +12,13 @@ import static com.codeborne.selenide.Selenide.page;
 public class CreateNewTest extends SettingsForTests {
     private static final String EXCEPTEDEMAIL = "testtempmail685@1secmail.org";
     private static final String PASSWORD = "NhBugH";
+    /**
+     * Заранее подготовленные данные
+     */
+    private final String testName = "test";
+    private final String webSite = "test.com";
+    private final String nameSegment = "Perfomance";
+    private final String voiceResponse = "testTest";
 
     @BeforeClass
     public void authClient() {
@@ -22,7 +29,7 @@ public class CreateNewTest extends SettingsForTests {
     @Test
     public void createNewTest() {
         CreateNewTestPage page = page(CreateNewTestPage.class);
-        page.createNewTest();
+        page.createNewTest(testName, webSite, nameSegment, voiceResponse);
     }
 
 }

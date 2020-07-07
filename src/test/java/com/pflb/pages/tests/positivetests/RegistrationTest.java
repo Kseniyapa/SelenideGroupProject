@@ -10,6 +10,9 @@ import static com.codeborne.selenide.Selenide.page;
 
 public class RegistrationTest extends SettingsForTests {
     private final int randomNumber = new Random().nextInt(1000);
+    /**
+     *Регистрация с заранее подготовленными данными
+     */
     private final String name = "Ivan" + randomNumber;
     private final String position = "Junoir";
     private final String company = "Perfomance";

@@ -42,6 +42,11 @@ public class RegistrationPage {
 
     /**
      * Метод регистрирует нового клиента.
+     * @param email - валидный емайл клиента
+     * @param company - компания
+     * @param phone - номер телефона клиента
+     * @param position - должность
+     * @param name - имя клиента
      */
     public void registrationNewClient(String name, String position, String company, String email, String phone) {
         openWindowAuth.shouldBe(visible).click();
