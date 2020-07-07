@@ -5,7 +5,7 @@ import com.pflb.pages.AuthorizationPage;
 import com.pflb.pages.ProfilePage;
 import com.pflb.pages.tests.configuration.SettingsForTests;
 import org.testng.Assert;
-import org.testng.annotations.BeforeTest;
+import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 
 import static com.codeborne.selenide.Selenide.page;
@@ -18,7 +18,7 @@ public class ProfilePageTest extends SettingsForTests {
     private static final String EXCEPTEDFIO = "Ivan685";
 
 
-    @BeforeTest
+    @BeforeClass
     public void authClient() {
         AuthorizationPage page = page(AuthorizationPage.class);
         page.authClient(EXCEPTEDEMAIL, PASSWORD);
