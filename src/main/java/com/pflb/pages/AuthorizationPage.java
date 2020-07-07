@@ -34,10 +34,10 @@ public class AuthorizationPage {
     }
 
     /**
+     * Метод авторизации клиента
+     * @param email - валидный емайл клиента
+     * @param password- валидный пароль
      * Метод авторизирует клиента.
-     *
-     * @param email    содержит почту клиента от профиля.
-     * @param password сожержит пароль клиента от профиля.
      */
 
     public void authClient(String email, String password) {

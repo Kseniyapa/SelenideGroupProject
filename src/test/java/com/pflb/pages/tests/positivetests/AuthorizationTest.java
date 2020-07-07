@@ -8,6 +8,10 @@ import org.testng.annotations.Test;
 import static com.codeborne.selenide.Selenide.page;
 
 public class AuthorizationTest extends SettingsForTests {
+    /**
+     *
+     *       Данные ранее зарегистрированного клиента
+     */
     private final static String EMAIL = "wibddmtssk@1secmail.com";
     private final static String PASSWORD = "PqxPZR";
 
