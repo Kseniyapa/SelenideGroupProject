@@ -1,5 +1,7 @@
 package com.pflb.pages.tests.configuration;
 
+import com.codeborne.selenide.Config;
+import com.codeborne.selenide.SelenideConfig;
 import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeTest;
 
