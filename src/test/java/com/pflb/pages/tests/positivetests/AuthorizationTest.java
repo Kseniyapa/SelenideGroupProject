@@ -11,23 +11,23 @@ import static com.codeborne.selenide.Selenide.$;
 import static com.codeborne.selenide.Selenide.page;
 
 public class AuthorizationTest extends SettingsForTests {
-    private final String email = "wibddmtssk@1secmail.com";
-    private final String password = "PqxPZR";
+    private final static String EMAIL = "wibddmtssk@1secmail.com";
+    private final static String PASSWORD = "PqxPZR";
 
     @Test(priority = 1)
     public void authClient() {
         AuthorizationPage page = page(AuthorizationPage.class);
-        page.authClient(email, password);
+        page.authClient(EMAIL, PASSWORD);
+        page.logoutClient();
         boolean logoutButton = page.isLogoutButton();
         Assert.assertTrue(logoutButton);
-
     }
 
     @Test(priority = 2)
     public void auth() {
         $(By.xpath("//*[@id=\"header-lk-button\"]")).shouldBe(visible).click();
-        $(By.xpath("//*[@id=\"login\"]")).setValue(email);
-        $(By.xpath("//*[@id=\"form_auth\"]/input[2]")).setValue(password);
+        $(By.xpath("//*[@id=\"login\"]")).setValue(EMAIL);
+        $(By.xpath("//*[@id=\"form_auth\"]/input[2]")).setValue(PASSWORD);
         $(By.xpath("//*[@id=\"form_auth\"]/button")).click();
     }
 
