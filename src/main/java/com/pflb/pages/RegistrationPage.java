@@ -1,10 +1,10 @@
 package com.pflb.pages;
 
 import com.codeborne.selenide.SelenideElement;
-import org.openqa.selenium.support.FindBy;
-import org.openqa.selenium.support.How;
+import org.openqa.selenium.By;
 
 import static com.codeborne.selenide.Condition.visible;
+import static com.codeborne.selenide.Selenide.$;
 
 public class RegistrationPage {
 
@@ -13,38 +13,36 @@ public class RegistrationPage {
      * Локаторы для работы со страницей
      */
 
-    @FindBy(how = How.XPATH, using = "//*[@id=\"header-lk-button\"]")
-    private SelenideElement openWindowAuth;
+    private SelenideElement openWindowAuth = $(By.xpath("//*[@id=\"header-lk-button\"]"));
 
-    @FindBy(how = How.XPATH, using = "//div[1]/section[1]/label")
-    private SelenideElement registrationButton;
+    private SelenideElement registrationButton = $(By.xpath("//div[1]/section[1]/label"));
 
-    @FindBy(how = How.CSS, using = "[ng-tr=\"WHE1.WHE12\"]")
-    private SelenideElement toBeClient;
+    private SelenideElement toBeClient = $(By.cssSelector("[ng-tr=\"WHE1.WHE12\"]"));
 
-    @FindBy(how = How.XPATH, using = "//*[@id=\"name\"]")
-    private SelenideElement fieldName;
+    private SelenideElement fieldName = $(By.xpath("//*[@id=\"name\"]"));
 
-    @FindBy(how = How.XPATH, using = "//*[@id=\"position\"]")
-    private SelenideElement fieldPosition;
+    private SelenideElement fieldPosition = $(By.xpath("//*[@id=\"position\"]"));
 
-    @FindBy(how = How.XPATH, using = "//*[@id=\"company\"]")
-    private SelenideElement fieldCompany;
+    private SelenideElement fieldCompany = $(By.xpath("//*[@id=\"company\"]"));
 
-    @FindBy(how = How.XPATH, using = "//*[@id=\"emails\"]")
-    private SelenideElement fieldEmail;
+    private SelenideElement fieldEmail = $(By.xpath("//*[@id=\"emails\"]"));
 
-    @FindBy(how = How.XPATH, using = "//*[@id=\"phoneNumber\"]")
-    private SelenideElement fieldPhone;
+    private SelenideElement fieldPhone = $(By.xpath("//*[@id=\"phoneNumber\"]"));
 
-    @FindBy(how = How.XPATH, using = "//*[@id=\"form_register_customer\"]/button")
-    private SelenideElement toRegisterButton;
+    private SelenideElement toRegisterButton = $(By.xpath("//*[@id=\"form_register_customer\"]/button"));
 
     /**
      * Метод регистрирует нового клиента.
+     *
+     * @param name     Имя пользователя.
+     * @param position Позиция пользователя.
+     * @param company  Компания пользователя.
+     * @param email    Почта пользователя.
+     * @param phone    Телефон пользователя.
      */
     public void registrationNewClient(String name, String position, String company, String email, String phone) {
         openWindowAuth.shouldBe(visible).click();
+        registrationButton.shouldBe(visible).click();
         toBeClient.shouldBe(visible).click();
         fieldName.shouldBe(visible).setValue(name);
         fieldPosition.setValue(position);
