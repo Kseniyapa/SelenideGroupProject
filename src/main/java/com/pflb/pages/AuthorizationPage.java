@@ -18,6 +18,8 @@ public class AuthorizationPage {
     private SelenideElement fieldPassword;
     @FindBy(how = How.XPATH, using = "//*[@id=\"form_auth\"]/button")
     private SelenideElement buttonEnter;
+    @FindBy(how = How.XPATH ,using = "//*[@id=\"logout\"]")
+    private SelenideElement logoutClient;
 
 
     public void authClient(String email, String password) {
@@ -25,6 +27,7 @@ public class AuthorizationPage {
         fieldEmail.setValue(email);
         fieldPassword.setValue(password);
         buttonEnter.shouldBe(visible).pressEnter();
+        logoutClient.shouldBe(visible).click();
     }
 
     private void openFormAuth() {
