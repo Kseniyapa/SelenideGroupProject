@@ -1,10 +1,10 @@
 package com.pflb.pages;
 
 import com.codeborne.selenide.SelenideElement;
-import org.openqa.selenium.support.FindBy;
-import org.openqa.selenium.support.How;
+import org.openqa.selenium.By;
 
 import static com.codeborne.selenide.Condition.visible;
+import static com.codeborne.selenide.Selenide.$;
 
 public class ProfilePage {
 
@@ -13,17 +13,13 @@ public class ProfilePage {
      * Локаторы для работы со страницей
      */
 
-    @FindBy(how = How.XPATH, using = "//*[@id=\"top\"]//section[2]/div")
-    private SelenideElement profileSettings;
+    private SelenideElement profileSettings = $(By.xpath("//*[@id=\"top\"]//section[2]/div"));
 
-    @FindBy(css = "[ng-model=\"customerProfile.username\"]")
-    private SelenideElement fieldNameClient;
+    private SelenideElement fieldNameClient = $(By.cssSelector("[ng-model=\"customerProfile.username\"]"));
 
-    @FindBy(css = "[ng-model=\"customerProfile.email\"]")
-    private SelenideElement fieldEmailClient;
+    private SelenideElement fieldEmailClient = $(By.cssSelector("[ng-model=\"customerProfile.email\"]"));
 
-    @FindBy(css = "[required-error-message=\"Введите ФИО\"]")
-    private SelenideElement fieldClientFIO;
+    private SelenideElement fieldClientFIO = $(By.cssSelector("[required-error-message=\"Введите ФИО\"]"));
 
     /**
      * Метод ожидает появление и нажимает на кнопку.
@@ -34,7 +30,9 @@ public class ProfilePage {
     }
 
     /**
-     * Метод возвращает актуальный логин клиента.
+     * Метод возвращает строку.
+     *
+     * @return Актуальный логин клиента.
      */
 
     public String getTextFromFiledNameClient() {
@@ -42,7 +40,9 @@ public class ProfilePage {
     }
 
     /**
-     * Метод возвращает актуальную почта клиента.
+     * Метод возвращает строку.
+     *
+     * @return Актуальную почту клиента.
      */
 
     public String getTextFromFieldEmailClient() {
@@ -50,7 +50,9 @@ public class ProfilePage {
     }
 
     /**
-     * Метод возвращает актуальное имя клиента.
+     * Метод возвращает строку.
+     *
+     * @return Актуальное имя клиента.
      */
 
     public String getTextFromFiledClientFIO() {
