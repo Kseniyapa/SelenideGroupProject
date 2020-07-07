@@ -1,10 +1,10 @@
 package com.pflb.pages;
 
 import com.codeborne.selenide.SelenideElement;
-import org.openqa.selenium.support.FindBy;
-import org.openqa.selenium.support.How;
+import org.openqa.selenium.By;
 
 import static com.codeborne.selenide.Condition.visible;
+import static com.codeborne.selenide.Selenide.$;
 
 public class AuthorizationPage {
 
@@ -12,24 +12,21 @@ public class AuthorizationPage {
      * Локаторы для работы со страницей
      */
 
-    @FindBy(how = How.XPATH, using = "//*[@id=\"header-lk-button\"]")
-    private SelenideElement openWindowAuth; // // Кнопка открытия окна "Вход/Регистрация".
+    private SelenideElement openWindowAuth = $(By.xpath("//*[@id=\"header-lk-button\"]")); // Кнопка открытия окна "Вход/Регистрация".
 
-    @FindBy(how = How.XPATH, using = "//*[@id=\"login\"]")
-    private SelenideElement fieldEmail; // Поле для ввода почты клиента.
+    private SelenideElement fieldEmail = $(By.xpath("//*[@id=\"login\"]")); // Поле для ввода почты клиента.
 
-    @FindBy(how = How.XPATH, using = "//*[@id=\"form_auth\"]/input[2]")
-    private SelenideElement fieldPassword; // Поле для ввода пароля клиента.
+    private SelenideElement fieldPassword = $(By.xpath("//*[@id=\"form_auth\"]/input[2]")); // Поле для ввода пароля клиента.
 
-    @FindBy(how = How.XPATH, using = "//*[@id=\"form_auth\"]/button")
-    private SelenideElement enterButton; // Кнопка "Войти" в профиль клиента.
+    private SelenideElement enterButton = $(By.xpath("//*[@id=\"form_auth\"]/button")); // Кнопка "Войти" в профиль клиента.
 
-    @FindBy(how = How.XPATH, using = "//*[@id=\"logout\"]")
-    private SelenideElement logoutButton; // Кнопка "Выйти" в профиль клиента.
+    private SelenideElement logoutButton = $(By.xpath("//*[@id=\"logout\"]")); // Кнопка "Выйти" в профиль клиента.
 
 
     /**
      * Метод проверяет отображается ли кнопка на странице профиля.
+     *
+     * @return true , если такая кнопка есть на странице
      */
 
     public boolean isLogoutButton() {
@@ -38,6 +35,9 @@ public class AuthorizationPage {
 
     /**
      * Метод авторизирует клиента.
+     *
+     * @param email    содержит почту клиента от профиля.
+     * @param password сожержит пароль клиента от профиля.
      */
 
     public void authClient(String email, String password) {
