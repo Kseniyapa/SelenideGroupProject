@@ -7,7 +7,7 @@ import org.openqa.selenium.support.How;
 import static com.codeborne.selenide.Condition.visible;
 
 public class CreateNewTestPage {
-    @FindBy(how = How.XPATH, using = "//*[className = \"new_test\"]")
+    @FindBy(how = How.XPATH, using = "[ng-tr=\"MTP.MTP\"]")
     private SelenideElement buttonCreateNewTest; //  Кнопка "Новый тест".
 
     @FindBy(how = How.XPATH, using = "//*[css = \"[data-testid=\"Test name input\"]]")
