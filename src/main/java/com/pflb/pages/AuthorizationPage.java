@@ -37,7 +37,7 @@ public class AuthorizationPage {
     }
 
     /**
-     * Метод авторизирует клианта , есть ли кнопка на странице профиля.
+     * Метод авторизирует клиента.
      */
 
     public void authClient(String email, String password) {
