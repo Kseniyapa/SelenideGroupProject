@@ -11,7 +11,6 @@ import static io.restassured.RestAssured.get;
 public class TempMail {
 
 
-
     public String checkMail(String login) {
         try {
             Thread.sleep(15000);
@@ -26,7 +25,7 @@ public class TempMail {
         return s.substring(1, s.length() - 1);
     }
 
-    public String getPasswordFromMessage(String login,String idMessage) {
+    public String getPasswordFromMessage(String login, String idMessage) {
         Response response = get("https://www.1secmail.com/api/v1/?action=readMessage&login=" + login + "&domain=1secmail.com&id=" + idMessage);
         JsonPath jsonPath = response.jsonPath();
         String body = jsonPath.get("body");

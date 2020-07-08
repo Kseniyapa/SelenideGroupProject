@@ -35,9 +35,10 @@ public class AuthorizationPage {
 
     /**
      * Метод авторизации клиента
+     *
      * @param email     - валидный емайл клиента
      * @param password- валидный пароль
-     * Метод авторизирует клиента.
+     *                  Метод авторизирует клиента.
      */
 
     public void authClient(String email, String password) {

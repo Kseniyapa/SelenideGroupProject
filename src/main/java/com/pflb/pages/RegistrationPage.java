@@ -36,6 +36,7 @@ public class RegistrationPage {
 
     /**
      * Метод для возврата текста.
+     *
      * @return Текст после успешной регистрации.
      */
     public String getTextAfterSuccessRegistration() {
