@@ -15,7 +15,7 @@ public class RegistrationPage {
 
     private SelenideElement openWindowAuth = $(By.xpath("//*[@id=\"header-lk-button\"]")); // Открыть окно Вход/Регистрации.
 
-    private SelenideElement registrationButton = $(By.xpath("//div[1]/section[1]/label")); // Кнопка "Зарегистрироваться"
+    private SelenideElement registrationButton = $(By.cssSelector("[ng-tr=\"WHE.WHE20\"]")); // Кнопка "Зарегистрироваться"
 
     private SelenideElement toBeClient = $(By.cssSelector("[ng-tr=\"WHE1.WHE12\"]")); // Кнопка "Стать клиентом".
 

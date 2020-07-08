@@ -10,8 +10,11 @@ import static com.codeborne.selenide.Selenide.$;
 
 public class DownloadStatementAsPdf {
     private SelenideElement openWindowAuth = $(By.xpath("//*[@id=\"header-lk-button\"]"));
-    private SelenideElement registrationButton = $(By.xpath("//div[1]/section[1]/label"));
+
+    private SelenideElement registrationButton = $(By.cssSelector("[ng-tr=\"WHE.WHE20\"]"));
+
     private SelenideElement toBeClient = $(By.cssSelector("[ng-tr=\"WHE1.WHE12\"]"));
+
     private SelenideElement transmittingInformation = $(By.cssSelector("a[href$=\"assets/files/tester_conditions.pdf\"]"));
 
 
