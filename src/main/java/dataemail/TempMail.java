@@ -11,7 +11,8 @@ import static io.restassured.RestAssured.get;
 public class TempMail {
 
 
-    public String checkMail(String login) {
+    public String checkMail(String email) {
+        String login = getLogin(email);
         try {
             Thread.sleep(15000);
         } catch (InterruptedException e) {
@@ -25,7 +26,8 @@ public class TempMail {
         return s.substring(1, s.length() - 1);
     }
 
-    public String getPasswordFromMessage(String login, String idMessage) {
+    public String getPasswordFromMessage(String email, String idMessage) {
+        String login = getLogin(email);
         Response response = get("https://www.1secmail.com/api/v1/?action=readMessage&login=" + login + "&domain=1secmail.com&id=" + idMessage);
         JsonPath jsonPath = response.jsonPath();
         String body = jsonPath.get("body");
@@ -46,6 +48,12 @@ public class TempMail {
             return m2.group(2);
         }
         return null;
+
+    }
+
+    private String getLogin (String email){
+        int i = email.indexOf('@');
+       return email.substring(0,i);
 
     }
 }

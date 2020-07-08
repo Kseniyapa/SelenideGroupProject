@@ -19,23 +19,22 @@ public class RegistrationAndAuthorizationTest extends SettingsForTests {
     private final String name = "Ivan" + randomNumber;
     private final String position = "Junoir";
     private final String company = "Perfomance";
-    private final String login = "testforregistration" + randomNumber;
-    private final String endMail = "@1secmail.com";
+    private final String email = "testforregistration" + randomNumber + "@1secmail.com";
     private final String phone = "79999999999";
 
 
     @Test(priority = 1)
     public void registrationNewClient() {
         RegistrationPage page = page(RegistrationPage.class);
-        page.registrationNewClient(name, position, company, login + endMail, phone);
+        page.registrationNewClient(name, position, company, email, phone);
     }
 
     @Test(priority = 2)
     public void authorizationNewClient() {
         TempMail tempmail = page(TempMail.class);
-        String idMessage = tempmail.checkMail(login);
-        String passwordFromMessage = tempmail.getPasswordFromMessage(login, idMessage);
+        String idMessage = tempmail.checkMail(email);
+        String passwordFromMessage = tempmail.getPasswordFromMessage(email, idMessage);
         AuthorizationPage page = page(AuthorizationPage.class);
-        page.authClient(login + endMail, passwordFromMessage);
+        page.authClient(email, passwordFromMessage);
     }
 }
