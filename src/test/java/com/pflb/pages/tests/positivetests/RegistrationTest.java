@@ -17,14 +17,14 @@ public class RegistrationTest extends SettingsForTests {
     private final String name = "Ivan" + randomNumber;
     private final String position = "Junoir";
     private final String company = "Perfomance";
-    private final String login = "testforregistration" + randomNumber + "@1secmail.com";
+    private final String email = "testforregistration" + randomNumber + "@1secmail.com";
     private final String phone = "79999999999";
     private static final String EXCEPTEDTEXTAFTERREGISTRATION = "Спасибо за регистрацию на UXCrowd!";
 
     @Test
     public void registrationClient() {
         RegistrationPage page = page(RegistrationPage.class);
-        page.registrationNewClient(name, position, company, login, phone);
+        page.registrationNewClient(name, position, company, email, phone);
         String textAfterSuccessRegistration = page.getTextAfterSuccessRegistration();
         Assert.assertEquals(textAfterSuccessRegistration, EXCEPTEDTEXTAFTERREGISTRATION);
     }
