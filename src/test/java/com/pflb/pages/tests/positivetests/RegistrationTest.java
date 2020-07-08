@@ -2,6 +2,7 @@ package com.pflb.pages.tests.positivetests;
 
 import com.pflb.pages.RegistrationPage;
 import com.pflb.pages.tests.configuration.SettingsForTests;
+import org.testng.Assert;
 import org.testng.annotations.Test;
 
 import java.util.Random;
@@ -16,13 +17,17 @@ public class RegistrationTest extends SettingsForTests {
     private final String name = "Ivan" + randomNumber;
     private final String position = "Junoir";
     private final String company = "Perfomance";
-    private final String email = "testforregistration" + randomNumber + "@1secmail.com";
+    private final String login = "testforregistration" + randomNumber;
+    private final String endMail = "@1secmail.com";
     private final String phone = "79999999999";
+    private static final String EXCEPTEDTEXTAFTERREGISTRATION = "Спасибо за регистрацию на UXCrowd!";
 
     @Test
     public void registrationClient() {
         RegistrationPage page = page(RegistrationPage.class);
-        page.registrationNewClient(name, position, company, email, phone);
+        page.registrationNewClient(name, position, company, login + endMail, phone);
+        String textAfterSuccessRegistration = page.getTextAfterSuccessRegistration();
+        Assert.assertEquals(textAfterSuccessRegistration, EXCEPTEDTEXTAFTERREGISTRATION);
     }
 
 }
