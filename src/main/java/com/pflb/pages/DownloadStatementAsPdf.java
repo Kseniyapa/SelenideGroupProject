@@ -3,6 +3,8 @@ package com.pflb.pages;
 import com.codeborne.selenide.SelenideElement;
 import org.openqa.selenium.By;
 
+import java.io.FileNotFoundException;
+
 import static com.codeborne.selenide.Condition.visible;
 import static com.codeborne.selenide.Selenide.$;
 
