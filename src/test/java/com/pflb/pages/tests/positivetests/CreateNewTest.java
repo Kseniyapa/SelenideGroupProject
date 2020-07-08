@@ -29,22 +29,21 @@ public class CreateNewTest extends SettingsForTests {
     private final String name = "Ivan" + randomNumber;
     private final String position = "Junoir";
     private final String company = "Perfomance";
-    private final String login = "testforregistration" + randomNumber;
-    private final String endMail = "@1secmail.com";
+    private final String login = "testforregistration" + randomNumber + "@1secmail.com";
     private final String phone = "79999999999";
 
 
     @BeforeClass
     public void registrationNewClient() {
         RegistrationPage registrationPage = page(RegistrationPage.class);
-        registrationPage.registrationNewClient(name, position, company, login + endMail, phone);
+        registrationPage.registrationNewClient(name, position, company, login, phone);
 
         TempMail tempmail = page(TempMail.class);
         String idMessage = tempmail.checkMail(login);
         String passwordFromMessage = tempmail.getPasswordFromMessage(login, idMessage);
 
         AuthorizationPage authorizationPage = page(AuthorizationPage.class);
-        authorizationPage.authClient(login + endMail, passwordFromMessage);
+        authorizationPage.authClient(login, passwordFromMessage);
     }
 
     @Test
