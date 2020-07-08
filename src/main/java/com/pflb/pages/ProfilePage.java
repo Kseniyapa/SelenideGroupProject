@@ -36,7 +36,7 @@ public class ProfilePage {
      */
 
     public String getTextFromFiledNameClient() {
-        return fieldNameClient.getValue();
+        return fieldNameClient.shouldBe(visible).getValue();
     }
 
     /**
