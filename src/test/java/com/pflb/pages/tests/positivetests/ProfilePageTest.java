@@ -13,8 +13,6 @@ import static com.codeborne.selenide.Selenide.page;
 public class ProfilePageTest extends SettingsForTests {
     /**
      * Данные ранее зарегистрированного клиента
-     * (Валидные : EXCEPTEDEMAIL, PASSWORD)
-     * (Не валидные : EXCEPTEDLOGIN, EXCEPTEDFIO)
      */
     private static final String EXCEPTEDLOGIN = "testtempmail685";
     private static final String EXCEPTEDEMAIL = "testtempmail685@1secmail.org";

@@ -27,7 +27,7 @@ public class CreateNewTest extends SettingsForTests {
     @Test
     public void createNewTest() {
         CreateNewTestPage page = page(CreateNewTestPage.class);
-        page.createNewTest(NAMETEST,WEBSITE,NAMESEGMENT,QUESTION);
+        page.createNewTest(NAMETEST, WEBSITE, NAMESEGMENT, QUESTION);
         String textAfterCreateNewTest = page.getTextAfterCreateNewTest();
         Assert.assertEquals(textAfterCreateNewTest, EXCEPTEDTEXTAFTERCREATENEWTEST);
 

@@ -35,7 +35,7 @@ public class AuthorizationPage {
 
     /**
      * Метод авторизации клиента
-     * @param email - валидный емайл клиента
+     * @param email     - валидный емайл клиента
      * @param password- валидный пароль
      * Метод авторизирует клиента.
      */
@@ -59,7 +59,7 @@ public class AuthorizationPage {
      * Метод открывает форму для авторизации.
      */
 
-    private void openFormAuth() {
+    public void openFormAuth() {
         openWindowAuth.shouldBe(visible).click();
     }
 
