@@ -13,13 +13,13 @@ public class ProfilePage {
      * Локаторы для работы со страницей
      */
 
-    private SelenideElement profileSettings = $(By.xpath("//*[@id=\"top\"]//section[2]/div"));
+    private SelenideElement profileSettings = $(By.xpath("//*[@id=\"top\"]//section[2]/div")); // Кнопка "Профиль".
 
-    private SelenideElement fieldNameClient = $(By.cssSelector("[ng-model=\"customerProfile.username\"]"));
+    private SelenideElement fieldLoginClient = $(By.cssSelector("[ng-model=\"customerProfile.username\"]")); // Поле логина клиента.
 
-    private SelenideElement fieldEmailClient = $(By.cssSelector("[ng-model=\"customerProfile.email\"]"));
+    private SelenideElement fieldEmailClient = $(By.cssSelector("[ng-model=\"customerProfile.email\"]")); // Поле почты клиента.
 
-    private SelenideElement fieldClientFIO = $(By.cssSelector("[required-error-message=\"Введите ФИО\"]"));
+    private SelenideElement fieldClientFIO = $(By.cssSelector("[required-error-message=\"Введите ФИО\"]")); // Поле имени клиента.
 
     /**
      * Метод ожидает появление и нажимает на кнопку.
@@ -36,7 +36,7 @@ public class ProfilePage {
      */
 
     public String getTextFromFiledNameClient() {
-        return fieldNameClient.shouldBe(visible).getValue();
+        return fieldLoginClient.shouldBe(visible).getValue();
     }
 
     /**
