@@ -1,15 +1,17 @@
 package com.pflb.pages.tests.positivetests;
 
+
+import com.pflb.pages.AuthorizationPage;
 import com.pflb.pages.RegistrationPage;
 import com.pflb.pages.tests.configuration.SettingsForTests;
-import org.testng.Assert;
+import dataemail.TempMail;
 import org.testng.annotations.Test;
 
 import java.util.Random;
 
 import static com.codeborne.selenide.Selenide.page;
 
-public class RegistrationTest extends SettingsForTests {
+public class RegistrationAndAuthorizationTest extends SettingsForTests {
     private final int randomNumber = new Random().nextInt(1000);
     /**
      * Регистрация с заранее подготовленными данными
@@ -20,14 +22,20 @@ public class RegistrationTest extends SettingsForTests {
     private final String login = "testforregistration" + randomNumber;
     private final String endMail = "@1secmail.com";
     private final String phone = "79999999999";
-    private static final String EXCEPTEDTEXTAFTERREGISTRATION = "Спасибо за регистрацию на UXCrowd!";
 
-    @Test
-    public void registrationClient() {
+
+    @Test(priority = 1)
+    public void registrationNewClient() {
         RegistrationPage page = page(RegistrationPage.class);
         page.registrationNewClient(name, position, company, login + endMail, phone);
-        String textAfterSuccessRegistration = page.getTextAfterSuccessRegistration();
-        Assert.assertEquals(textAfterSuccessRegistration, EXCEPTEDTEXTAFTERREGISTRATION);
     }
 
+    @Test(priority = 2)
+    public void authorizationNewClient() {
+        TempMail tempmail = page(TempMail.class);
+        String idMessage = tempmail.checkMail(login);
+        String passwordFromMessage = tempmail.getPasswordFromMessage(login, idMessage);
+        AuthorizationPage page = page(AuthorizationPage.class);
+        page.authClient(login + endMail, passwordFromMessage);
+    }
 }
