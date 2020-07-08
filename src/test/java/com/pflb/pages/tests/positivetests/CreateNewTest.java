@@ -3,6 +3,7 @@ package com.pflb.pages.tests.positivetests;
 import com.pflb.pages.AuthorizationPage;
 import com.pflb.pages.CreateNewTestPage;
 import com.pflb.pages.tests.configuration.SettingsForTests;
+import io.qameta.allure.Step;
 import org.testng.Assert;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
@@ -11,8 +12,8 @@ import static com.codeborne.selenide.Selenide.page;
 
 public class CreateNewTest extends SettingsForTests {
     private static final String EXCEPTEDTEXTAFTERCREATENEWTEST = "Ура! Тест создан и отправлен пользователям.";
-    private static final String EXCEPTEDEMAIL = "fasdsfafs@1secmail.com";
-    private static final String PASSWORD = "3g1WCq";
+    private static final String EXCEPTEDEMAIL = "7yvadvrwwf@1secmail.com";
+    private static final String PASSWORD = "00Y8dI";
     private static final String NAMETEST = "AVANGARD";
     private static final String WEBSITE = "test.uxcrowd.ru";
     private static final String NAMESEGMENT = "SEGMENT";

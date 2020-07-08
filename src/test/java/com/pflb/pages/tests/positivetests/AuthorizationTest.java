@@ -22,5 +22,4 @@ public class AuthorizationTest extends SettingsForTests {
         boolean logoutButton = page.isLogoutButton();
         Assert.assertTrue(logoutButton);
     }
-
 }

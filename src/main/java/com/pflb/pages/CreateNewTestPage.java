@@ -1,6 +1,7 @@
 package com.pflb.pages;
 
 import com.codeborne.selenide.SelenideElement;
+
 import org.openqa.selenium.By;
 
 import static com.codeborne.selenide.Condition.visible;
@@ -64,6 +65,7 @@ public class CreateNewTestPage {
         addedQuestionButton.shouldBe(visible).pressEnter();
         checkAndRunTestButton.shouldBe(visible).pressEnter();
         rubFreeTestButton.shouldBe(visible).pressEnter();
-    }
 
+
+    }
 }
