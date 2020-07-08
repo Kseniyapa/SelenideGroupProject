@@ -5,9 +5,11 @@ import com.pflb.pages.CreateNewTestPage;
 import com.pflb.pages.RegistrationPage;
 import com.pflb.pages.tests.configuration.SettingsForTests;
 import dataemail.TempMail;
+import jdk.jfr.Description;
 import org.testng.Assert;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
+
 
 import java.util.Random;
 
@@ -45,6 +47,7 @@ public class CreateNewTest extends SettingsForTests {
         AuthorizationPage authorizationPage = page(AuthorizationPage.class);
         authorizationPage.authClient(login, passwordFromMessage);
     }
+
 
     @Test
     public void createNewTest() {
