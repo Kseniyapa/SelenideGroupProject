@@ -23,6 +23,7 @@ public class DownloadStatementAsPdf {
         registrationButton.shouldBe(visible).click();
         toBeClient.shouldBe(visible).click();
         transmittingInformation.shouldBe(visible).download();
+
     }
 
 }
