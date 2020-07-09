@@ -11,7 +11,7 @@ public class CreateNewTestPage {
      * Локаторы для работы со страницей
      */
 
-    private SelenideElement createNewTestButton = $("new_test");  // Открыть окно создания нового теста
+    private SelenideElement createNewTestButton = $("section.item_menu_nav.new-test-btn.customer-left-menu > div");  // Открыть окно создания нового теста
 
     private SelenideElement fieldNameTest = $("[data-testid=\"Test name input\"]"); // Поле для ввода названия теста.
 
