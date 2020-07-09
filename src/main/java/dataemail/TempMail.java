@@ -51,9 +51,8 @@ public class TempMail {
 
     }
 
-    private String getLogin (String email){
+    private String getLogin(String email) {
         int i = email.indexOf('@');
-       return email.substring(0,i);
-
+        return email.substring(0, i);
     }
 }

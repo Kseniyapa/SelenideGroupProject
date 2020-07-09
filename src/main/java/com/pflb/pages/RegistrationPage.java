@@ -1,10 +1,10 @@
 package com.pflb.pages;
 
 import com.codeborne.selenide.SelenideElement;
-import org.openqa.selenium.By;
 
 import static com.codeborne.selenide.Condition.visible;
 import static com.codeborne.selenide.Selenide.$;
+import static com.codeborne.selenide.Selenide.$x;
 
 public class RegistrationPage {
 
@@ -13,25 +13,25 @@ public class RegistrationPage {
      * Локаторы для работы со страницей
      */
 
-    private SelenideElement openWindowAuth = $(By.xpath("//*[@id=\"header-lk-button\"]")); // Открыть окно Вход/Регистрации.
+    private SelenideElement openWindowAuth = $x("//*[@id=\"header-lk-button\"]"); // Открыть окно Вход/Регистрации.
 
-    private SelenideElement registrationButton = $(By.cssSelector("[ng-tr=\"WHE.WHE20\"]")); // Кнопка "Зарегистрироваться"
+    private SelenideElement registrationButton = $("[ng-tr=\"WHE.WHE20\"]"); // Кнопка "Зарегистрироваться"
 
-    private SelenideElement toBeClient = $(By.cssSelector("[ng-tr=\"WHE1.WHE12\"]")); // Кнопка "Стать клиентом".
+    private SelenideElement toBeClient = $("[ng-tr=\"WHE1.WHE12\"]"); // Кнопка "Стать клиентом".
 
-    private SelenideElement fieldName = $(By.xpath("//*[@id=\"name\"]")); // Поле для ввода "Имени клиента".
+    private SelenideElement fieldName = $x("//*[@id=\"name\"]"); // Поле для ввода "Имени клиента".
 
-    private SelenideElement fieldPosition = $(By.xpath("//*[@id=\"position\"]")); // Поле для ввода "Позиции клиента".
+    private SelenideElement fieldPosition = $x("//*[@id=\"position\"]"); // Поле для ввода "Позиции клиента".
 
-    private SelenideElement fieldCompany = $(By.xpath("//*[@id=\"company\"]")); // Поле для ввода "Компании клиента".
+    private SelenideElement fieldCompany = $x("//*[@id=\"company\"]"); // Поле для ввода "Компании клиента".
 
-    private SelenideElement fieldEmail = $(By.xpath("//*[@id=\"emails\"]")); // Поле для ввода "Почты клиента".
+    private SelenideElement fieldEmail = $x("//*[@id=\"emails\"]"); // Поле для ввода "Почты клиента".
 
-    private SelenideElement fieldPhone = $(By.xpath("//*[@id=\"phoneNumber\"]")); // Поле для ввода "Телефона клиента".
+    private SelenideElement fieldPhone = $x("//*[@id=\"phoneNumber\"]"); // Поле для ввода "Телефона клиента".
 
-    private SelenideElement toRegisterButton = $(By.xpath("//*[@id=\"form_register_customer\"]/button")); // Кнопка "Заренистрироваться".
+    private SelenideElement toRegisterButton = $x("//*[@id=\"form_register_customer\"]/button"); // Кнопка "Заренистрироваться".
 
-    private SelenideElement textAfterSuccessRegistrationClient = $(By.xpath("//*[@id=\"top\"]/div[2]//div[2]/div/div")); // Текст псоле успешной регистрации.
+    private SelenideElement textAfterSuccessRegistrationClient = $x("//*[@id=\"top\"]/div[2]//div[2]/div/div"); // Текст псоле успешной регистрации.
 
 
     /**

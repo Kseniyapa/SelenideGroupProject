@@ -1,10 +1,9 @@
 package com.pflb.pages;
 
 import com.codeborne.selenide.SelenideElement;
-import org.openqa.selenium.By;
 
 import static com.codeborne.selenide.Condition.visible;
-import static com.codeborne.selenide.Selenide.$;
+import static com.codeborne.selenide.Selenide.$x;
 
 public class AuthorizationPage {
 
@@ -12,16 +11,15 @@ public class AuthorizationPage {
      * Локаторы для работы со страницей
      */
 
-    private SelenideElement openWindowAuth = $(By.xpath("//*[@id=\"header-lk-button\"]")); // Кнопка открытия окна "Вход/Регистрация".
+    private SelenideElement openWindowAuth = $x("//*[@id=\"header-lk-button\"]"); // Кнопка открытия окна "Вход/Регистрация".
 
-    private SelenideElement fieldEmail = $(By.xpath("//*[@id=\"login\"]")); // Поле для ввода почты клиента.
+    private SelenideElement fieldEmail = $x("//*[@id=\"login\"]"); // Поле для ввода почты клиента.
 
-    private SelenideElement fieldPassword = $(By.xpath("//*[@id=\"form_auth\"]/input[2]")); // Поле для ввода пароля клиента.
+    private SelenideElement fieldPassword = $x("//*[@id=\"form_auth\"]/input[2]"); // Поле для ввода пароля клиента.
 
-    private SelenideElement enterButton = $(By.xpath("//*[@id=\"form_auth\"]/button")); // Кнопка "Войти" в профиль клиента.
+    private SelenideElement enterButton = $x("//*[@id=\"form_auth\"]/button"); // Кнопка "Войти" в профиль клиента.
 
-    private SelenideElement logoutButton = $(By.xpath("//*[@id=\"logout\"]")); // Кнопка "Выйти" в профиль клиента.
-
+    private SelenideElement logoutButton = $x("//*[@id=\"logout\"]"); // Кнопка "Выйти" в профиль клиента.
 
     /**
      * Метод проверяет отображается ли кнопка на странице профиля.
